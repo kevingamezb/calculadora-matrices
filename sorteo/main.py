@@ -43,7 +43,7 @@ def mostrar_lista(lista):
 
 def mostrar_menu():
     """Dibuja las opciones disponibles."""
-    print("\nOrdenamiento de Números Aleatorios")
+    print("\nOrdenamiento de Listas, con números aleatorios:")
     print("1. Ordenar por Burbuja")
     print("2. Ordenar por Inserción")
     print("3. Ordenar por Selección")

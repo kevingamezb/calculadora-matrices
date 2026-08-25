@@ -141,7 +141,7 @@ def operacion_producto_matriz_vector():
 
 def mostrar_menu():
     """Dibuja las opciones en pantalla."""
-    print("\n===== CALCULADORA DE MATRICES =====")
+    print("\nCalculadora de Matrices SuperPro:")
     print("1. Suma Matrices")
     print("2. Producto Matrices")
     print("3. Matriz Inversa")
