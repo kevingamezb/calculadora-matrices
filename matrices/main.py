@@ -83,7 +83,7 @@ def leer_matriz(nombre):
     # aquí ya llegan bien formadas gracias a leer_fila.
     datos = [leer_fila(columnas) for _ in range(filas)]
 
-    return Matriz(datos)
+    return datos
 
 
 def leer_vector():
@@ -93,14 +93,13 @@ def leer_vector():
     dimension = leer_entero("  Número de elementos: ")
     valores = leer_fila(dimension)
 
-    return Vector(valores)
+    return valores
 
 
 def operacion_suma():
     """Opción 1: A + B usando el operador sobrecargado de Matriz."""
-    a = leer_matriz("A")
-    b = leer_matriz("B")
-
+    a = Matriz(leer_matriz("A"))
+    b = Matriz(leer_matriz("B"))
     resultado = a + b          # llama a Matriz.__add__
 
     print("\nResultado (A + B):")
@@ -109,8 +108,8 @@ def operacion_suma():
 
 def operacion_producto_matrices():
     """Opción 2: A x B con la multiplicación clásica de matrices."""
-    a = leer_matriz("A")
-    b = leer_matriz("B")
+    a = Matriz(leer_matriz("A"))
+    b = Matriz(leer_matriz("B"))
 
     resultado = a * b          # llama a Matriz.__mul__ (caso Matriz)
 
@@ -120,7 +119,7 @@ def operacion_producto_matrices():
 
 def operacion_inversa():
     """Opción 3: inversa de A vía Gauss-Jordan (ver matriz.py)."""
-    a = leer_matriz("A")
+    a = Matriz(leer_matriz("A"))
 
     resultado = a.inversa()    # puede lanzar MatrizNoCuadrada/Singular
 
@@ -130,8 +129,8 @@ def operacion_inversa():
 
 def operacion_producto_matriz_vector():
     """Opción 4: A x v donde v es un vector columna."""
-    a = leer_matriz("A")
-    v = leer_vector()
+    a = Matriz(leer_matriz("A"))
+    v = Vector(leer_vector())
 
     resultado = a * v          # llama a Matriz.__mul__ (caso Vector)
 
